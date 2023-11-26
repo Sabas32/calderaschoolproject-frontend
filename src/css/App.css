@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
 }
+body{
+    width: 100vw;
+}
 /* fonts */
 @font-face {
   font-family: quickSand;
@@ -58,10 +61,10 @@
 .wrapperInput{
     display: flex;
     position: relative;
-    background: rgba(222, 222, 222, 0.765);
+    background: #dededec3;
+    border-radius: 2em;
     padding: 1em;
     margin: 1em 0;
-    border-radius: 2em;
     
 }
 .wrapperInput img{
