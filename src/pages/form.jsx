@@ -9,6 +9,7 @@ import homeIm from "../assets/home-1-svgrepo-com (1).svg";
 
 import "../css/forms.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Forms = () => {
   const [secondfromOpen, setsecondfromOpen] = useState(false);
@@ -28,15 +29,14 @@ const Forms = () => {
   // This is to handle the refresh of the login form for reset
   const handleresetInput = () => {
     setTimeout(function () {
-        window.location.reload(true); // Reloads the current page from the server
-      }, 2000);
-};
-
+      window.location.reload(true); // Reloads the current page from the server
+    }, 2000);
+  };
 
   return (
     <div>
       <div
-        className="cir"
+        className="cir fadeIn"
         style={
           signupOpen === true
             ? { transform: "rotate(500deg) translate(-60%, -5%)" }
@@ -51,7 +51,6 @@ const Forms = () => {
             : { flexDirection: "row" }
         }
       >
-
         {/* The information part of the Login Form */}
         <div
           className="rt loginformtxt"
@@ -65,16 +64,16 @@ const Forms = () => {
               : { transform: "scale(1)", position: "relative" }
           }
         >
-          <div className="info">
-            <h2>New Here ?</h2>
-            <p>
+          <div className="info fadeInDown">
+            <h2 className="fadeIn first">New Here ?</h2>
+            <p className="fadeIn second">
               "New to our learning community? Join us! Create an account to
               connect with teachers, track your child's educational journey, and
               collaborate with other parents. Let's build a stronger educational
               network together!"
             </p>
 
-            <div className="chooseType">
+            <div className="chooseType ">
               <button
                 className="btn"
                 onClick={() => {
@@ -110,7 +109,7 @@ const Forms = () => {
               </div>
             </div>
           </div>
-          <div className="img">
+          <div className=" fadeIn fourth img">
             <img src={education} alt="" />
           </div>
         </div>
@@ -154,21 +153,44 @@ const Forms = () => {
         </div>
         {/* End The information part of the SignUp Form */}
 
-
         {/* END  RIGHT*/}
 
         {/* THIS IS FOR THE LEFT OF THE LOG IN PAGE */}
-        <div className="lt">
-          {/* <div
-            className="btn"
+        <div className="lt fadeIn fourth">
+          <div
             style={
               signupOpen === true
                 ? { right: "auto", left: "0" }
                 : { right: "0", left: "auto" }
             }
           >
-            <img src={homeIm} alt="" /> Back home
-          </div> */}
+            <Link to="/">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#1c57e1"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  {" "}
+                  <path
+                    d="M6.5 20V11H3L12 5L21 11H17.5V20H14.5V16.5C14.5 15.6716 13.8284 15 13 15H11C10.1716 15 9.5 15.6716 9.5 16.5V20H6.5Z"
+                    fill="#1c57e1"
+                    stroke="#1c57e1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>{" "}
+                </g>
+              </svg>
+            </Link>
+          </div>
 
           {/*Specidies which form shows up accoding to need  */}
 
@@ -334,13 +356,17 @@ const Forms = () => {
                     <img src={usernameim} alt="" />
                     <input type="text" name="" id="" placeholder="secondname" />
                   </div>
-                  <div className="wrapperInput">
+                  <div className="wrapperInput classSelect" >
                     <img src={classim} alt="" />
-                    <input type="text" name="" id="" placeholder="Class" />
-                  </div>
-                  <div className="wrapperInput">
-                    <img src={classim} alt="" />
-                    <input type="text" name="" id="" placeholder="Std Stream" />
+                    <select className="selectSubject" name="" id="">
+                      <option value="">Select Class</option>
+                      <option value="">Senior 1</option>
+                      <option value="">Senior 2</option>
+                      <option value="">Senior 3</option>
+                      <option value="">Senior 4</option>
+                      <option value="">Senior 5</option>
+                      <option value="">Senior 6</option>
+                    </select>
                   </div>
                   <div className="wrapperInput">
                     <img src={numberIm} alt="" />

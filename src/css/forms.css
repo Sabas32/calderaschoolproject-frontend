@@ -35,6 +35,11 @@ html{
   margin-top: 5em;
   /* margin-left: 5em; */
   transition: 1s;
+  
+}
+
+.forms .rt .img {
+  z-index: -1;
 }
 .forms .rt .info h2 {
   font-size: 2em;
@@ -47,6 +52,8 @@ html{
   top: 0;
   right: 0;
   transition: 1s;
+  padding: .5em;
+  cursor: pointer;
 }
 .forms .lt {
   text-align: center;
@@ -54,20 +61,34 @@ html{
   width: 24em;
   transition: 1s;
 }
-.forms .lt > div > img {
+.forms .lt > div  svg {
   width: 30px;
   margin-right: 1em;
+  
 }
 
-.forms .signup form.firstForm > .wrapperInput:nth-child(3),
+.forms .lt > div  svg path{
+  stroke: #1c57e1;
+  fill: none;
+  transition: .5s;
+}
+.forms .lt > div  svg path:hover{
+  stroke: #1c57e1;
+  fill: #1c57e1;
+}
+
+
+/* .forms .signup form.firstForm > .wrapperInput:nth-child(3),
 .forms .signup form.firstForm > .wrapperInput:nth-child(4) {
   width: 11em;
   display: inline-flex;
 }
 .forms .signup form.firstForm > .wrapperInput:nth-child(3) {
   margin-right: 1em;
+} */
+.forms .signup form.firstForm > .wrapperInput.classSelect{
+  padding: .5em;
 }
-
 .signup > .SecondForm {
   transform: scale(0);
   position: absolute;
@@ -82,6 +103,7 @@ html{
 }
 .chooseType {
   position: relative;
+  z-index: 3;
 }
 .choose {
   background: #dededec3;
@@ -189,5 +211,13 @@ html{
   }
   .signup .SecondForm {
     opacity: 0;
+  }
+  .forms .lt > div  svg path{
+    stroke: white;
+    transition: .5s;
+  }
+  .forms .lt > div  svg path:hover{
+    stroke: white;
+    fill: white;
   }
 }

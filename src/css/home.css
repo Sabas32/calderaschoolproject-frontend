@@ -1,0 +1,95 @@
+.home {
+  height: 100vh;
+  position: relative;
+}
+.home::after {
+  content: "";
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CradialGradient id=%22c%22 r=%22100%25%22 cx=%2250%25%22 cy=%2290%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%238BC6EC%22%2F%3E%3Cstop offset=%22100%25%22 stop-color=%22%239599E2%22%2F%3E%3C%2FradialGradient%3E%3CclipPath id=%22b%22%3E%3Cpath fill=%22currentColor%22 d=%22M890 650q-32 150-179.5 177.5T441 834q-122-21-204-114.5t-75-217Q169 379 229 257T436.5 79q147.5-56 252 59.5t169 238.5Q922 500 890 650Z%22%2F%3E%3C%2FclipPath%3E%3Cfilter id=%22a%22 x=%22-50vw%22 y=%22-50vh%22 width=%22100vw%22 height=%22100vh%22%3E%3CfeFlood flood-color=%22%23fff%22 result=%22neutral-gray%22%2F%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%222.5%22 numOctaves=%22100%22 stitchTiles=%22stitch%22 result=%22noise%22%2F%3E%3CfeColorMatrix in=%22noise%22 type=%22saturate%22 values=%220%22 result=%22destaturatedNoise%22%2F%3E%3CfeComponentTransfer in=%22desaturatedNoise%22 result=%22theNoise%22%3E%3CfeFuncA type=%22table%22 tableValues=%220 0 0.5 0%22%2F%3E%3C%2FfeComponentTransfer%3E%3CfeBlend in=%22SourceGraphic%22 in2=%22theNoise%22 mode=%22soft-light%22 result=%22noisy-image%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Cg filter=%22url(%23a)%22 clip-path=%22url(%23b)%22%3E%3Cpath fill=%22url(%23c)%22 d=%22M890 650q-32 150-179.5 177.5T441 834q-122-21-204-114.5t-75-217Q169 379 229 257T436.5 79q147.5-56 252 59.5t169 238.5Q922 500 890 650Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+
+  top: 0;
+  left: 0;
+  transform: translate(-50%);
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.home main > div > p {
+  font-size: 18px;
+  margin: 1em 0;
+}
+.home main > div > h1 {
+  font-size: 5em;
+  text-transform: capitalize;
+}
+.home main > div > p:nth-child(1) {
+  color: #1c57e1;
+  letter-spacing: 3px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 0;
+}
+.home main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
+  padding: 2em 5em;
+}
+.home main > .left {
+  width: 40em;
+}
+.home main > .right {
+  width: 40%;
+}
+.home main > .right > img {
+  width: 100%;
+}
+
+@media (max-width: 970px) {
+  .home main {
+    flex-direction: column-reverse;
+  }
+  .home main > .right {
+    width: 20%;
+  }
+  .home main > .left {
+    width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  .home main > .right {
+    width: 35%;
+  }
+  .home main > div > h1 {
+    font-size: 3em;
+    font-weight: 900;
+  }
+  .home main > div > p {
+    font-size: 16px;
+    margin: 1em 0;
+  }
+}
+@media (max-width: 537px) {
+  .home main > .right {
+    height: 0em;
+    width: auto;
+  }
+  .home main > div > h1 {
+    font-size: 2em;
+    font-weight: 900;
+  }
+  .home main > div > p {
+    font-size: 16px;
+    margin: 1em 0;
+  }
+  .home main {
+    padding: 1em 2em;
+  }
+}
