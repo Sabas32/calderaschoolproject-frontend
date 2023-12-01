@@ -17,6 +17,124 @@ const Forms = () => {
   const [chooseType, setchooseType] = useState(false);
   const [teacher, setTeacher] = useState(false);
 
+  // ********EVENTS INPUTS********
+
+  // // Login form inputs
+  const [usernameLogin, setuserNameLogin] = useState("");
+  const [passwordLogin, setPasswordLogin] = useState("");
+  // events
+  const handleUsernameLogin = (e) => {
+    setuserNameLogin(e.target.value);
+  };
+  const handlePasswordLogin = (e) => {
+    setPasswordLogin(e.target.value);
+  };
+  // // end login inputs
+
+  // // Signup form inputs
+  // **TEACHER FORM EVENTS**
+  const [firstnameTr, setfirstnameNameTr] = useState("");
+  const [secondnameTr, setsecondnameTr] = useState("");
+  const [centerNumberTr, setcenternumberTr] = useState();
+  const [subjectTr, setsubjectTr] = useState("");
+  const [usernameTr, setusernameTr] = useState("");
+  const [emailTr, setemailTr] = useState("");
+  const [passwordTr, setpasswordTr] = useState("");
+  const [confirmpasswordTr, setconfirmpasswordTr] = useState("");
+
+  // events
+  const handlefirstnameTr = (e) => {
+    setfirstnameNameTr(e.target.value);
+  };
+  const handlesecondnameTr = (e) => {
+    setsecondnameTr(e.target.value);
+  };
+  const handlecenterNumberTr = (e) => {
+    setcenternumberTr(e.target.value);
+  };
+  const handlesubjectTr = (e) => {
+    setsubjectTr(e.target.value);
+  };
+  const handleusernameTr = (e) => {
+    setusernameTr(e.target.value);
+  };
+  const handleemailTr = (e) => {
+    setemailTr(e.target.value);
+  };
+  const handlepasswordTr = (e) => {
+    setpasswordTr(e.target.value);
+  };
+  const handleconfirmpasswordTr = (e) => {
+    setconfirmpasswordTr(e.target.value);
+  };
+  // **END TEACHER FORM EVENTS**
+  // **STUDENT FORM EVENTS**
+  const [firstnameSTd, setfirstnameNameSTd] = useState("");
+  const [secondnameSTd, setsecondnameSTd] = useState("");
+  const [classSTd, setclassSTd] = useState("");
+  const [centerNumberSTd, setcenternumberSTd] = useState();
+  const [usernameSTd, setusernameSTd] = useState("");
+  const [emailSTd, setemailSTd] = useState("");
+  const [passwordSTd, setpasswordSTd] = useState("");
+  const [confirmpasswordSTd, setconfirmpasswordSTd] = useState("");
+
+  // events
+  const handlefirstnameSTd = (e) => {
+    setfirstnameNameSTd(e.target.value);
+  };
+  const handlesecondnameSTd = (e) => {
+    setsecondnameSTd(e.target.value);
+  };
+  const handleclassSTd = (e) => {
+    setclassSTd(e.target.value);
+  };
+  const handlecenterNumberSTd = (e) => {
+    setcenternumberSTd(e.target.value);
+  };
+  const handleusernameSTd = (e) => {
+    setusernameSTd(e.target.value);
+  };
+  const handleemailSTd = (e) => {
+    setemailSTd(e.target.value);
+  };
+  const handlepasswordSTd = (e) => {
+    setpasswordSTd(e.target.value);
+  };
+  const handleconfirmpasswordSTd = (e) => {
+    setconfirmpasswordSTd(e.target.value);
+  };
+  // **END STUDENT FORM EVENTS**
+  // // end signup form inputs
+
+  // ********END EVENTS INPUTS*********
+
+  // Handle Submit Events
+  const handlesubmitTeacher = (e) => {
+    console.log({
+      firstnameTr,
+      secondnameTr,
+      centerNumberTr,
+      subjectTr,
+      usernameTr,
+      emailTr,
+      passwordTr,
+      confirmpasswordTr,
+    });
+  };
+  const handlesubmitStudents = (e) => {
+    console.log({
+      firstnameSTd,
+      secondnameSTd,
+      classSTd,
+      centerNumberSTd,
+      usernameSTd,
+      emailSTd,
+      passwordSTd,
+      confirmpasswordSTd,
+    });
+  };
+  // end Handle Submit Events
+
   // This is to toggle between the users selection on the signup button
   const handleUserSelect = () => {
     if (chooseType === false) {
@@ -174,7 +292,7 @@ const Forms = () => {
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   stroke-linejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
@@ -184,7 +302,7 @@ const Forms = () => {
                     fill="#1c57e1"
                     stroke="#1c57e1"
                     stroke-width="2"
-                    stroke-linecap="round"
+                    strokeLinecap="round"
                     stroke-linejoin="round"
                   ></path>{" "}
                 </g>
@@ -210,11 +328,23 @@ const Forms = () => {
             <h1>Login</h1>
             <div className="wrapperInput">
               <img src={usernameim} alt="" />
-              <input type="text" name="" id="" placeholder="username" />
+              <input
+                type="text"
+                onChange={handleUsernameLogin}
+                name=""
+                id=""
+                placeholder="username"
+              />
             </div>
             <div className="wrapperInput">
               <img src={padlockIm} alt="" />
-              <input type="password" name="" id="" placeholder="password" />
+              <input
+                type="password"
+                onChange={handlePasswordLogin}
+                name=""
+                id=""
+                placeholder="password"
+              />
             </div>
             <button className="btn-fill">login</button>
           </form>
@@ -248,33 +378,51 @@ const Forms = () => {
                 >
                   <div className="wrapperInput">
                     <img src={usernameim} alt="" />
-                    <input type="text" name="" id="" placeholder="firstname" />
+                    <input
+                      type="text"
+                      onChange={handlefirstnameTr}
+                      name="firstnameTr"
+                      id="firstnameTr"
+                      placeholder="firstname"
+                    />
                   </div>
 
                   <div className="wrapperInput">
                     <img src={usernameim} alt="" />
-                    <input type="text" name="" id="" placeholder="secondName" />
+                    <input
+                      type="text"
+                      onChange={handlesecondnameTr}
+                      name="secondnameTr"
+                      id="secondnameTr"
+                      placeholder="secondName"
+                    />
                   </div>
 
                   <div className="wrapperInput">
                     <img src={numberIm} alt="" />
                     <input
                       type="number"
-                      name=""
-                      id=""
-                      placeholder="school code"
+                      name="centerNumberTr"
+                      id="centerNumberTr"
+                      placeholder="Center Code"
+                      onChange={handlecenterNumberTr}
                     />
                   </div>
-                  <select className="selectSubject" name="" id="">
+                  <select
+                    onChange={handlesubjectTr}
+                    className="selectSubject"
+                    name="subjectTr"
+                    id="subjectTr"
+                  >
                     <option value="">Select subject</option>
-                    <option value="">Biology</option>
-                    <option value="">Pysics</option>
-                    <option value="">Chemistry</option>
-                    <option value="">Math</option>
-                    <option value="">English</option>
-                    <option value="">Literature</option>
-                    <option value="">ICT</option>
-                    <option value="">Technical Drawing</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Pysics">Pysics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Math">Math</option>
+                    <option value="English">English</option>
+                    <option value="Literature">Literature</option>
+                    <option value="ICT">ICT</option>
+                    <option value="Technical Drawing">Technical Drawing</option>
                   </select>
 
                   <button
@@ -303,28 +451,42 @@ const Forms = () => {
                 >
                   <div className="wrapperInput">
                     <img src={usernameim} alt="" />
-                    <input type="text" name="" id="" placeholder="username" />
+                    <input
+                      type="text"
+                      onChange={handleusernameTr}
+                      name="usernameTr"
+                      id="usernameTr"
+                      placeholder="username"
+                    />
                   </div>
                   <div className="wrapperInput">
                     <img src={emailim} alt="" />
-                    <input type="email" name="" id="" placeholder="email" />
-                  </div>
-                  <div className="wrapperInput">
-                    <img src={padlockIm} alt="" />
                     <input
-                      type="password"
-                      name=""
-                      id=""
-                      placeholder="password"
+                      type="email"
+                      onChange={handleemailTr}
+                      name="emailTr"
+                      id="emailTr"
+                      placeholder="email"
                     />
                   </div>
                   <div className="wrapperInput">
                     <img src={padlockIm} alt="" />
                     <input
                       type="password"
-                      name=""
-                      id=""
+                      name="passwordTr"
+                      id="passwordTr"
+                      placeholder="password"
+                      onChange={handlepasswordTr}
+                    />
+                  </div>
+                  <div className="wrapperInput">
+                    <img src={padlockIm} alt="" />
+                    <input
+                      type="password"
+                      name="confirmpasswordTr"
+                      id="confirmpasswordTr"
                       placeholder="Confirm password"
+                      onChange={handleconfirmpasswordTr}
                     />
                   </div>
 
@@ -335,11 +497,14 @@ const Forms = () => {
                   >
                     back
                   </button>
-                  <button className="btn-fill">Sign up</button>
+                  <button className="btn-fill" onClick={handlesubmitTeacher}>
+                    Sign up
+                  </button>
                 </form>
               </>
             ) : (
               <>
+                {/* ***Students Signup forn*** */}
                 <form
                   className="firstForm"
                   style={
@@ -350,31 +515,49 @@ const Forms = () => {
                 >
                   <div className="wrapperInput">
                     <img src={usernameim} alt="" />
-                    <input type="text" name="" id="" placeholder="firstname" />
+                    <input
+                      type="text"
+                      onChange={handlefirstnameSTd}
+                      name="secondnameSTd"
+                      id="firstnameSTd"
+                      placeholder="firstname"
+                    />
                   </div>
                   <div className="wrapperInput">
                     <img src={usernameim} alt="" />
-                    <input type="text" name="" id="" placeholder="secondname" />
+                    <input
+                      type="text"
+                      onChange={handlesecondnameSTd}
+                      name="secondnameSTd"
+                      id="secondnameSTd"
+                      placeholder="secondname"
+                    />
                   </div>
-                  <div className="wrapperInput classSelect" >
+                  <div className="wrapperInput classSelect">
                     <img src={classim} alt="" />
-                    <select className="selectSubject" name="" id="">
-                      <option value="">Select Class</option>
-                      <option value="">Senior 1</option>
-                      <option value="">Senior 2</option>
-                      <option value="">Senior 3</option>
-                      <option value="">Senior 4</option>
-                      <option value="">Senior 5</option>
-                      <option value="">Senior 6</option>
+                    <select
+                      onChange={handleclassSTd}
+                      className="selectSubject"
+                      name="centerNumberSTd"
+                      id="classSTd"
+                    >
+                      <option value="0">Select Class</option>
+                      <option value="1">Senior 1</option>
+                      <option value="2">Senior 2</option>
+                      <option value="3">Senior 3</option>
+                      <option value="4">Senior 4</option>
+                      <option value="5">Senior 5</option>
+                      <option value="6">Senior 6</option>
                     </select>
                   </div>
                   <div className="wrapperInput">
                     <img src={numberIm} alt="" />
                     <input
-                      type="text"
-                      name=""
-                      id=""
-                      placeholder="Center Number"
+                      type="number"
+                      name="centerNumberSTd"
+                      id="centerNumberSTd"
+                      placeholder="Center Code"
+                      onChange={handlecenterNumberSTd}
                     />
                   </div>
 
@@ -404,28 +587,42 @@ const Forms = () => {
                 >
                   <div className="wrapperInput">
                     <img src={usernameim} alt="" />
-                    <input type="text" name="" id="" placeholder="username" />
+                    <input
+                      type="text"
+                      onChange={handleusernameSTd}
+                      name="usernameSTd"
+                      id="usernameSTd"
+                      placeholder="username"
+                    />
                   </div>
                   <div className="wrapperInput">
                     <img src={emailim} alt="" />
-                    <input type="email" name="" id="" placeholder="email" />
-                  </div>
-                  <div className="wrapperInput">
-                    <img src={padlockIm} alt="" />
                     <input
-                      type="password"
-                      name=""
-                      id=""
-                      placeholder="password"
+                      type="email"
+                      name="emailSTd"
+                      id="emailSTd"
+                      placeholder="email"
+                      onChange={handleemailSTd}
                     />
                   </div>
                   <div className="wrapperInput">
                     <img src={padlockIm} alt="" />
                     <input
                       type="password"
-                      name=""
-                      id=""
+                      name="passwordSTd"
+                      id="passwordSTd"
+                      placeholder="password"
+                      onChange={handlepasswordSTd}
+                    />
+                  </div>
+                  <div className="wrapperInput">
+                    <img src={padlockIm} alt="" />
+                    <input
+                      type="password"
+                      name="confirmpasswordSTd"
+                      id="confirmpasswordSTd"
                       placeholder="Confirm password"
+                      onChange={handleconfirmpasswordSTd}
                     />
                   </div>
 
@@ -436,8 +633,11 @@ const Forms = () => {
                   >
                     back
                   </button>
-                  <button className="btn-fill">Sign up</button>
+                  <button className="btn-fill" onClick={handlesubmitStudents}>
+                    Sign up
+                  </button>
                 </form>
+                {/* ***End Students Signup forn*** */}
               </>
             )}
             {/* END CHEAK FOR USERTYPE FORM */}
